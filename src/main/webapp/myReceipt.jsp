@@ -43,11 +43,10 @@
                         <c:if test="${not empty pb.list}">
                             <c:forEach items="${pb.list}" var="route">
                                 <div class="col-md-3">
-                                    <a href="/invoice/receipt?methodName=findByReceipt&id=${route.id}">
-                                        <%--<img src="${route.rimage}" alt="">--%>
+                                    <a href="/invoice/receipt?methodName=findByReceipt&id=${route.id}" target="_blank">
                                         <div class="has_border">
                                             <h3>${route.name}</h3>
-                                            <%--<div class="price">网付价<em>￥</em><strong>${route.price}</strong><em>起</em>--%>
+                                            <div class="price">收款时间：<strong>${route.time}</strong>
                                             </div>
                                         </div>
                                     </a>

@@ -11,8 +11,10 @@ import com.zhichenkeji.utils.Factory;
 import java.util.List;
 
 public class ReceiptSerivce implements IReceiptService {
+
+    private ReceiptDao receiptDao = new ReceiptDao();
+
     public int register(Receipt receipt, String bigMoney, String dateTime){
-        ReceiptDao receiptDao = new ReceiptDao();
 
         receiptDao.register(receipt,bigMoney,dateTime);
 
@@ -49,8 +51,6 @@ public class ReceiptSerivce implements IReceiptService {
 
     public Receipt findByReceipt(String id) {
 
-
-
-        return null;
+        return receiptDao.findByReceipt(id);
     }
 }

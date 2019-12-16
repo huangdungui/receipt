@@ -11,7 +11,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>路线详情</title>
+    <title>收据详情</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/common.css">
     <link rel="stylesheet" type="text/css" href="css/route-detail.css">
@@ -20,29 +20,24 @@
 <body>
 <!-- 详情 start -->
 <div class="wrap">
-        <div class="prosum_box">
-            <p class="pros_title">${route.name}</p>
-            <p class="hot">${route.routeIntroduce}</p>
-            <div class="pros_other">
-                <p>今收到财务部 ${route.time} 现金工资 ${route.money} ,人民币大写 ${route.bigMoney}</p>
-            </div>
-            <div class="pros_price">
-                <p class="price"><strong>¥${route.name}</strong><span>起</span></p>
-                <p class="collect">
-                    <%--红色按钮--%>
-                    <a id="bt1" class="btn">
-                        <i class="glyphicon glyphicon-heart-empty"></i>点击收藏
-                    </a>
-                    <%--灰色按钮--%>
-                    <a id="bt2" class="btn already" disabled="disabled">
-                        <i class="glyphicon glyphicon-heart-empty"></i>点击收藏
-                    </a>
-
-                    <span id="sp1">已收藏${route.name}次</span>
-                </p>
-            </div>
+    <div class="prosum_box">
+        <p class="pros_title">收款人：${route.name}</p>
+        <%--<p class="hot">${route.routeIntroduce}</p>--%>
+        <div class="pros_other">
+            <p>今收到财务部 <font color="red">${route.time}</font> 现金工资 <font color="red">${route.money}</font>，人民币大写 <font
+                    color="red">${route.bigMoney}</font> 元整</p>
         </div>
 
+    </div>
+    <p class="collect" style="text-align: center">
+        <%--红色按钮--%>
+        <a id="bt1" class="btn">
+            点击下载
+        </a>
+    </p>
+    <%--<div class="pros_price">
+
+    </div>--%>
 </div>
 <!-- 详情 end -->
 
@@ -54,9 +49,9 @@
 <!--导入布局js，共享header和footer-->
 
 
+<%--
 
-
-<%--根据用户状态显示不同的按钮--%>
+&lt;%&ndash;根据用户状态显示不同的按钮&ndash;%&gt;
 <script>
     $(function(){
         var url="/travel/favorite";
@@ -95,7 +90,7 @@
             })
         })
     })
-</script>
+</script>--%>
 
 
 </body>

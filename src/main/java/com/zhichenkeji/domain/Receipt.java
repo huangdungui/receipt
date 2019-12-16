@@ -81,4 +81,17 @@ public class Receipt implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
+
+
+    @Override
+    public String toString() {
+        return "Receipt{" +
+                "id=" + id +
+                ", time='" + time + '\'' +
+                ", money='" + money + '\'' +
+                ", bigMoney='" + bigMoney + '\'' +
+                ", name='" + name + '\'' +
+                ", createTime='" + createTime + '\'' +
+                '}';
+    }
 }

@@ -36,4 +36,10 @@ public class ReceiptDao implements IReceiptDao{
     }
 
 
+    public Receipt findByReceipt(String id) {
+
+        String sql = "select * from receipt where id = ?";
+        Receipt receipt = jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<Receipt>(Receipt.class), id);
+        return receipt;
+    }
 }
