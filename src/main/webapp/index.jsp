@@ -34,31 +34,12 @@
 </head>
 
 <body>
-
-  <%--  <div class="grid__item theme-1">
-        <button class="action">
-            <svg class="icon icon--rewind">
-                <use xlink:href="#icon-rewind"></use>
-            </svg>
-        </button>
-        <button class="particles-button" onclick="window.location.href = 'receipt.jsp'">填写</button>
-    </div>
-    <div class="grid__item theme-2">
-        <button class="action">
-            <svg class="icon icon--rewind">
-                <use xlink:href="#icon-rewind"></use>
-            </svg>
-        </button>
-        <button class="particles-button" onclick="window.location.href = 'receipt.jsp'">查看</button>
-    </div>
-
---%>
 <div class="center-in-center">
     <p id="colored-button" class="text-center">
         <a class="btn float-buttons waves-effect waves-button waves-float" onclick="window.location.href = 'receipt.jsp'">添加收据</a>
         <%--<button class="btn float-button-light waves-effect waves-button waves-float waves-light">Button B</button>--%>
         <i class="btn float-buttons waves-input-wrapper waves-effect waves-button waves-float" style="color: rgb(255, 255, 255); background: rgb(255, 79, 15)">
-            <input onclick="window.location.href = 'receipt.jsp'" class="waves-button-input" type="submit" value="查看收据" style="background-color: rgba(0,0,0,0);"></i>
+            <input onclick="window.location.href = '/invoice/receipt?methodName=MyReceipt&pageNumber=1'" class="waves-button-input" type="submit" value="查看收据" style="background-color: rgba(0,0,0,0);"></i>
     </p>
 
 </div>

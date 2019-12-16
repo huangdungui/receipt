@@ -11,12 +11,24 @@ public class Receipt implements Serializable {
     private String time;
     private String money;
     private String bigMoney;
+    private String name;
+    private String createTime;
 
-    public Receipt(int id, String time, String money, String bigMoney) {
+    public Receipt(int id, String time, String money, String bigMoney, String name, String createTime) {
         this.id = id;
         this.time = time;
         this.money = money;
         this.bigMoney = bigMoney;
+        this.name = name;
+        this.createTime = createTime;
+    }
+
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
     }
 
     public Receipt() {
@@ -54,13 +66,19 @@ public class Receipt implements Serializable {
         this.bigMoney = bigMoney;
     }
 
-    @Override
-    public String toString() {
-        return "Receipt{" +
-                "id=" + id +
-                ", time='" + time + '\'' +
-                ", money='" + money + '\'' +
-                ", bigMoney='" + bigMoney + '\'' +
-                '}';
+    public String getBigMoney() {
+        return bigMoney;
+    }
+
+    public void setBigMoney(String bigMoney) {
+        this.bigMoney = bigMoney;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

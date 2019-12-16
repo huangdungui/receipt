@@ -31,7 +31,10 @@
             <label for="money">现金</label>
             <input type="text" class="form-control" name="money" id="money" placeholder="请输入收款金额">
         </div>
-
+        <div class="form-group">
+            <label for="name">姓名</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="请输入姓名">
+        </div>
 
 
     </div>
@@ -46,12 +49,13 @@
     $(function () {
         $("#registerId").click(function () {
 
-            alert(111)
             var url = "/invoice/receipt";
             var data = $("#registerForm").serialize();
             $.post(url, data, function (d) {
                 if (d == 0) {
                     $("#errorMsg").html("服务器发生了错误，请稍后尝试");
+                } else if (d == 1) {
+                    $("#errorMsg").html("收据添加成功");
                 }
             })
         })
