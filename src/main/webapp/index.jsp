@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <html>
 
 <head>
@@ -8,63 +7,119 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>收据</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/getParameter.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/waves.min.css?v=0.7.2">
+    <style>
+        #colored-button .btn {
+            color: #fff;
+        }
+
+        #colored-button a,
+        #colored-button a:hover {
+            background: #01BCFF;
+        }
+
+        #colored-button button,
+        #colored-button button:hover {
+            background: #1bb556;
+        }
+
+        #colored-button input,
+        #colored-button input:hover {
+            background: #ff4f0f;
+        }
+    </style>
+
 </head>
 
 <body>
 
-
-<form id="registerForm">
-
-    <div class="modal-body">
-        <%--隐藏域提交数据--%>
-        <input type="hidden" name="methodName" value="register"/>
-
-
-        <div class="form-group">
-            <label for="date">收款日期</label>
-            <input type="date" class="form-control" name="time" id="date">
-        </div>
-        <div class="form-group">
-            <label for="money">现金</label>
-            <input type="text" class="form-control" name="money" id="money" placeholder="请输入收款金额">
-        </div>
-
-
-
+  <%--  <div class="grid__item theme-1">
+        <button class="action">
+            <svg class="icon icon--rewind">
+                <use xlink:href="#icon-rewind"></use>
+            </svg>
+        </button>
+        <button class="particles-button" onclick="window.location.href = 'receipt.jsp'">填写</button>
     </div>
-    <div class="modal-footer" style="text-align: center">
-        <span id="errorMsg" style="color: red;"></span>
-        <button type="button" class="btn btn-primary" id="registerId">提交</button>
+    <div class="grid__item theme-2">
+        <button class="action">
+            <svg class="icon icon--rewind">
+                <use xlink:href="#icon-rewind"></use>
+            </svg>
+        </button>
+        <button class="particles-button" onclick="window.location.href = 'receipt.jsp'">查看</button>
     </div>
-</form>
 
-<script>
+--%>
+<div class="center-in-center">
+    <p id="colored-button" class="text-center">
+        <a class="btn float-buttons waves-effect waves-button waves-float" onclick="window.location.href = 'receipt.jsp'">添加收据</a>
+        <%--<button class="btn float-button-light waves-effect waves-button waves-float waves-light">Button B</button>--%>
+        <i class="btn float-buttons waves-input-wrapper waves-effect waves-button waves-float" style="color: rgb(255, 255, 255); background: rgb(255, 79, 15)">
+            <input onclick="window.location.href = 'receipt.jsp'" class="waves-button-input" type="submit" value="查看收据" style="background-color: rgba(0,0,0,0);"></i>
+    </p>
 
-    $(function () {
-        $("#registerId").click(function () {
+</div>
 
-            alert(111)
-            var url = "/invoice/receipt";
-            var data = $("#registerForm").serialize();
-            $.post(url, data, function (d) {
-                if (d == 0) {
-                    $("#errorMsg").html("服务器发生了错误，请稍后尝试");
-                }
-            })
-        })
+  <style type="text/css">
+      *{
+          margin: 0;
+          padding: 0;
+          background-color: #EAEAEA;
+      }
+
+      .center-in-center{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+      }
+  </style>
+
+
+  <script type="text/javascript">
+    Waves.attach('.flat-buttons', ['waves-button']);
+    Waves.attach('.float-buttons', ['waves-button', 'waves-float']);
+    Waves.attach('.float-button-light', ['waves-button', 'waves-float', 'waves-light']);
+</script>
+<script type="text/javascript" src="js/waves.min.js?v=0.7.1"></script>
+<!-- jQuery  -->
+  <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+    var currentRoute = false;
+    $(document).on('ready', function () {
+
+        // Init Waves
+        Waves.init();
+        Waves.attach('.drag-ripple', 'waves-block', true);
+        Waves.attach('#bg-pattern', null, true);
+        init();
+        $(window).on('hashchange', routing);
+        /**
+         * Example source code click
+         */
+        $('#example .top-button').on('click', function () {
+            var type = $(this).data('code');
+            $('#source-code .box .code').addClass('hide');
+            $('#source-code .box #code-' + type).removeClass('hide');
+            $('#source-code').removeClass('hide');
+            setTimeout(function () {
+                $('#source-code').addClass('show');
+            }, 50);
+        });
+        $('#source-code .top-button').on('click', function () {
+
+            $('#source-code').removeClass('show');
+
+            setTimeout(function () {
+                $('#source-code .box .code').addClass('hide');
+                $('#source-code').addClass('hide');
+            }, 500);
+        });
     });
 
 </script>
 
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery-3.3.1.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
-
 </body>
-
 </html>

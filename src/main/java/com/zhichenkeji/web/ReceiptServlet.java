@@ -10,8 +10,6 @@ import java.math.BigDecimal;
 import java.util.Map;
 
 public class ReceiptServlet extends BaseServlet {
-    // 关注自己的方法
-    // 注册
     private void register(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
 
         try {
@@ -27,9 +25,8 @@ public class ReceiptServlet extends BaseServlet {
 
             // 调用service
             ReceiptSerivce receiptSerivce = new ReceiptSerivce();
-            // 带着参数去注册
             int i = receiptSerivce.register(receipt,bigMoney);
-            response.getWriter().print(i); //1(用户名为空)  2(用户名已被注册)  3（条件都满足 注册成功）
+            response.getWriter().print(i);
         } catch (Exception e) {
             e.printStackTrace();
             // 失败
