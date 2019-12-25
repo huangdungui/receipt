@@ -28,7 +28,7 @@ public class ReceiptServlet extends BaseServlet {
             String money = receipt.getMoney();
 
             Date date = new Date();
-            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             String dateTime = format.format(date);
 
             //转化大写

@@ -56,6 +56,10 @@
                     $("#errorMsg").html("服务器发生了错误，请稍后尝试");
                 } else if (d == 1) {
                     $("#errorMsg").html("收据添加成功");
+                    //清除填写框
+                    $("#name").val("");
+                    $("#money").val("");
+                    $("#date").val("");
                 }
             })
         })

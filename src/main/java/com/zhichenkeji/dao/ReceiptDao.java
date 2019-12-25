@@ -30,7 +30,7 @@ public class ReceiptDao implements IReceiptDao{
     public List<Receipt> myFavorite(int pageNumber, int pageSize) {
 //求起始数据库
         int start = (pageNumber - 1) * pageSize;
-        String sql = "SELECT * FROM receipt order by time desc  limit ?,?";
+        String sql = "SELECT * FROM receipt order by createTime desc  limit ?,?";
         List<Receipt> list = jdbcTemplate.query(sql, new BeanPropertyRowMapper<Receipt>(Receipt.class), start,pageSize);
         return list;
     }
