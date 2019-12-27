@@ -49,7 +49,7 @@
     $(function () {
         $("#registerId").click(function () {
 
-            var url = "/invoice/receipt";
+            var url = "${pageContext.request.contextPath}/receipt";
             var data = $("#registerForm").serialize();
             $.post(url, data, function (d) {
                 if (d == 0) {

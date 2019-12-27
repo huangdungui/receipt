@@ -43,7 +43,7 @@
                         <c:if test="${not empty pb.list}">
                             <c:forEach items="${pb.list}" var="route">
                                 <div class="col-md-3">
-                                    <a href="/invoice/receipt?methodName=findByReceipt&id=${route.id}" target="_blank">
+                                    <a href="${pageContext.request.contextPath}/receipt?methodName=findByReceipt&id=${route.id}" target="_blank">
                                         <div class="has_border">
                                             <h3>${route.name}</h3>
                                             <div class="price">收款时间：<strong>${route.time}</strong>
@@ -68,9 +68,9 @@
         <div class="pageNum">
             <ul>
                 <c:if test="${pb.pageNumber != 1}">
-                    <li><a href="http://localhost:8085/invoice/receipt?methodName=MyReceipt&pageNumber=1">首页</a></li>
+                    <li><a href="${pageContext.request.contextPath}/receipt?methodName=MyReceipt&pageNumber=1">首页</a></li>
                     <li class="threeword"><a
-                            href="http://localhost:8085/invoice/receipt?methodName=MyReceipt&pageNumber=${pb.pageNumber - 1}">上一页</a>
+                            href="${pageContext.request.contextPath}/receipt?methodName=MyReceipt&pageNumber=${pb.pageNumber - 1}">上一页</a>
                     </li>
                 </c:if>
 
@@ -79,17 +79,17 @@
 
                 <c:forEach begin="${pb.begin}" end="${pb.end}" step="1" var="page">
                     <li>
-                        <a href="http://localhost:8085/invoice/receipt?methodName=MyReceipt&pageNumber=${page}">${page}</a>
+                        <a href="${pageContext.request.contextPath}/receipt?methodName=MyReceipt&pageNumber=${page}">${page}</a>
                     </li>
                 </c:forEach>
 
 
                 <c:if test="${pb.pageNumber != pb.totalPage}">
                     <li class="threeword"><a
-                            href="http://localhost:8085/invoice/receipt?methodName=MyReceipt&pageNumber=${pb.pageNumber + 1}">下一页</a>
+                            href="${pageContext.request.contextPath}/receipt?methodName=MyReceipt&pageNumber=${pb.pageNumber + 1}">下一页</a>
                     </li>
                     <li class="threeword"><a
-                            href="http://localhost:8085/invoice/receipt?methodName=MyReceipt&pageNumber=${pb.totalPage}">末页</a>
+                            href="${pageContext.request.contextPath}/receipt?methodName=MyReceipt&pageNumber=${pb.totalPage}">末页</a>
                     </li>
                 </c:if>
 

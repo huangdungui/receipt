@@ -6,6 +6,7 @@ import com.zhichenkeji.iservice.IReceiptService;
 import com.zhichenkeji.service.ReceiptSerivce;
 import com.zhichenkeji.utils.Factory;
 import com.zhichenkeji.utils.NumberTo;
+import com.zhichenkeji.utils.PoiToWord;
 import org.apache.commons.beanutils.BeanUtils;
 
 import javax.servlet.ServletException;
@@ -64,5 +65,12 @@ public class ReceiptServlet extends BaseServlet {
         Receipt receipt = receiptSerivce.findByReceipt(id);
         request.setAttribute("route",receipt);
         request.getRequestDispatcher("/receipt_detail.jsp").forward(request, response);
+    }
+    private void downloadWord(HttpServletRequest request, HttpServletResponse response) throws Exception{
+        String id = request.getParameter("id");
+        ReceiptSerivce receiptSerivce = new ReceiptSerivce();
+        Receipt receipt = receiptSerivce.findByReceipt(id);
+        PoiToWord poi = new PoiToWord();
+        poi.poiToWord(receipt,request,response);
     }
 }

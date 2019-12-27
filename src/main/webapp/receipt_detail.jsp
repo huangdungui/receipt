@@ -19,19 +19,20 @@
 
 <body>
 <!-- 详情 start -->
-<div class="wrap">
+<%--style="position:absolute;width:200px;height:200px;left:35%;top:50%;margin-left:-250px;margin-top:-120px " --%>
+<div class="wrap" style="position: absolute;left: 25%;top: 40%">
     <div class="prosum_box">
-        <p class="pros_title">收款人：${route.name}</p>
+        <p class="pros_title" style="font-size: 20px">收款人：<font color="red">${route.name}</font></p>
         <%--<p class="hot">${route.routeIntroduce}</p>--%>
         <div class="pros_other">
-            <p>今收到财务部 <font color="red">${route.time}</font> 现金工资 <font color="red">${route.money}</font>，人民币大写 <font
-                    color="red">${route.bigMoney}</font> 元整</p>
+            <p style="font-size: 20px">今收到财务部 <font color="red">${route.time}</font> 现金工资 <font color="red">${route.money}</font>，人民币大写 <font
+                    color="red">${route.bigMoney}</font></p>
         </div>
 
     </div>
     <p class="collect" style="text-align: center">
         <%--红色按钮--%>
-        <a id="bt1" class="btn">
+        <a id="bt1" onclick="downloadWord()" class="btn">
             点击下载
         </a>
     </p>
@@ -39,7 +40,6 @@
 
     </div>--%>
 </div>
-<!-- 详情 end -->
 
 <!--引入头部-->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -48,49 +48,12 @@
 <script src="js/bootstrap.min.js"></script>
 <!--导入布局js，共享header和footer-->
 
-
-<%--
-
-&lt;%&ndash;根据用户状态显示不同的按钮&ndash;%&gt;
 <script>
-    $(function(){
-        var url="/travel/favorite";
-        var data="methodName=isFavorite&rid=${route.rid}";
-        $.post(url,data,function(d){
-            if(d==0){
-                //没登录 隐藏灰色
-                $("#bt2").hide();
-            }else if(d==1){
-                //用户登录了没有收藏
-                $("#bt2").hide();
-            }else if(d==2){
-                //用户登录了也收藏了
-                $("#bt1").hide();
-            }
-        });
-    })
+
+    function downloadWord() {
+        window.location.href = "${pageContext.request.contextPath}/receipt?methodName=downloadWord&id=${route.id}";
+    }
 </script>
-
-<script>
-    $(function(){
-        $("#bt1").click(function(){
-            var url="/travel/favorite";
-            var data="methodName=saveFavorite&rid=${route.rid}";
-            $.post(url,data,function(d){
-                if(d=="no"){
-                    // 登录页面
-                    location.href="/travel/login.jsp";
-                }else{
-                    // 隐藏红色按钮显示灰色按钮
-                    $("#bt1").hide();
-                    $("#bt2").show();
-                    // 显示收藏次数
-                    $("#sp1").html("已收藏"+d+"次");
-                }
-            })
-        })
-    })
-</script>--%>
 
 
 </body>

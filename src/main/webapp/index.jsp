@@ -38,7 +38,7 @@
     <p id="colored-button" class="text-center">
         <a target="_blank" class="btn float-buttons waves-effect waves-button waves-float" href = 'receipt.jsp'>添加收据</a>
         <i class="btn float-buttons waves-input-wrapper waves-effect waves-button waves-float" style="color: rgb(255, 255, 255); background: rgb(255, 79, 15)">
-            <input onclick='window.open("/invoice/receipt?methodName=MyReceipt&pageNumber=1")' class="waves-button-input" type="submit" value="查看收据" style="background-color: rgba(0,0,0,0);"></i>
+            <input onclick='window.open("${pageContext.request.contextPath}/receipt?methodName=MyReceipt&pageNumber=1")' class="waves-button-input" type="submit" value="查看收据" style="background-color: rgba(0,0,0,0);"></i>
     </p>
 
 </div>
