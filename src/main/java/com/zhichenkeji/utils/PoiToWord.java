@@ -41,24 +41,24 @@ public class PoiToWord {
         XWPFParagraph firstParagraph = document.createParagraph();
         XWPFRun run = firstParagraph.createRun();
         run.setFontFamily("华文楷体");
-        run.setText("          今收到财务部 " + receipt.getTime() + " 现金工资（" + receipt.getMoney() + "）元，人民币大写（" + receipt.getBigMoney() + "）。");
+        run.setText("          "+receipt.getName()+"，今收到财务部 " + receipt.getTime() + " 现金工资（" + receipt.getMoney() + "）元，人民币大写（" + receipt.getBigMoney() + "）元整。");
         run.setColor("000000");
         run.setFontSize(12);
 
         // 签名
         XWPFParagraph firstParagraph1 = document.createParagraph();
-        firstParagraph1.setAlignment(ParagraphAlignment.RIGHT);
+        firstParagraph1.setAlignment(ParagraphAlignment.CENTER);
         XWPFRun run1 = firstParagraph1.createRun();
         run1.setFontFamily("华文楷体");
-        run1.setText("签字：");
+        run1.setText("                                                                              签字：");
         run1.setColor("000000");
         run1.setFontSize(12);
         // 时间
         XWPFParagraph firstParagraph2 = document.createParagraph();
-        firstParagraph2.setAlignment(ParagraphAlignment.RIGHT);
+        firstParagraph2.setAlignment(ParagraphAlignment.CENTER);
         XWPFRun run2 = firstParagraph2.createRun();
         run2.setFontFamily("华文楷体");
-        run2.setText("日期：");
+        run2.setText("                                                                              日期：");
         run2.setColor("000000");
         run2.setFontSize(12);
 

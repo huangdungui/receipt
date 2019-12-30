@@ -26,7 +26,7 @@
         <%--<p class="hot">${route.routeIntroduce}</p>--%>
         <div class="pros_other">
             <p style="font-size: 20px">今收到财务部 <font color="red">${route.time}</font> 现金工资 <font color="red">${route.money}</font>，人民币大写 <font
-                    color="red">${route.bigMoney}</font></p>
+                    color="red">${route.bigMoney}</font> 元整</p>
         </div>
 
     </div>

@@ -32,7 +32,7 @@
         <div class="jx_top">
             <div class="jx_tit">
                 <img src="images/icon_5.jpg" alt="">
-                <span>所有收据</span>
+                <span style="font-weight: bold">所有收据</span>
             </div>
         </div>
         <div class="jx_content">
